@@ -2,9 +2,17 @@
 Repository for CSCE 5124 P4 
 
 
+
+
+
 ## Project Files
 
 [Project Proposal](https://docs.google.com/presentation/d/1CRLX_wxaSNPcYa8rTN84LSuM5k8u7ZmddhwwK4vvqvQ/edit?usp=sharing)
+
+[Data_Explore.ipynb](".Data_Explore.ipynb")
+
+You will need to create a data dir in you root directory and put the compressed reddit file there
+
 
 ## Resources
 

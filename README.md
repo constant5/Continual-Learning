@@ -18,6 +18,8 @@ Repository for CSCE 5124 P4
 
 [Core50 Dataset](https://vlomonaco.github.io/core50/)
 
+[Reddit Posts](https://drive.google.com/file/d/12C7lOehVMF8XKyb0nK2U6nZS_Z7VJihB/view?usp=sharing)
+
 ## Models
 
 [LwF](https://arxiv.org/pdf/1606.09282.pdf)

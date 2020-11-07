@@ -23,3 +23,5 @@ Repository for CSCE 5124 P4
 [LwF](https://arxiv.org/pdf/1606.09282.pdf)
 
 [EWC](https://arxiv.org/pdf/1612.00796.pdf)
+
+[CURl](https://proceedings.neurips.cc/paper/2019/file/861578d797aeb0634f77aff3f488cca2-Paper.pdf)

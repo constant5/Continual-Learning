@@ -4,16 +4,29 @@ import json
 import bz2
 import os
 
-class bz2reader():
+class BZ2Reader():
+    """The BZ2Reader aids in efficient processing of bz2 files containing a key:attribute structure """
 
     def __init__(self, fname, keys=[], max_lines=-1):
+        """reader object
+
+        Args:
+            fname (str): path of file to process
+            max_lines (int, optional): maximum number of lines to process
+            keys (:obj:'list` of :obj:`str`): specific attributes to return
+        """
+
         self.fname = fname
         self.file_object = bz2.open(self.fname, 'rb')
         self.max_lines = max_lines
         self.keys = keys
 
     def read_lines(self):
-        ''' reads bz2 file line by line and yields dicts'''
+        ''' reads bz2 file line by line and yields dicts
+        
+        Yields:
+            dict: individual posts
+        '''
         i = 0
         while True:
             data = self.file_object.readline()
@@ -24,7 +37,15 @@ class bz2reader():
             yield json.loads(data.decode())
     
     def select_keys(self, keys=None):
-        # yields dictionaries with selected key
+        ''' yields dictionaries with selected key
+
+        Args:
+            keys (:obj:`list` of :obj:`str`): specific attributes to return
+
+        Yields:
+            dict: post with selected keys
+        '''
+
         if keys:
             self.keys = keys
         ''' yield lines with only specified keys'''
@@ -38,7 +59,13 @@ class bz2reader():
             yield processed
 
     def build_structure(self):
-        # build a dictionary with subreddits as keys and body text as values
+        ''' build a dictionary with subreddits as keys and body text as values
+
+
+        Returns:
+            dict: all posts as lists with subreddits as keys
+        '''
+
         data = {}
         for p in self.select_keys():
             if p['body'] != 'deleted' and len(p['body'].split(' ')) >= 4:
@@ -56,9 +83,17 @@ class bz2reader():
                     else:
                         data[p['subreddit']] = [{k:p[k] for k in self.keys  if k!='subreddit'}]
         return data
-# # TODO: 
 
     def file_writer(self, dest = "data", p_min=1000, batch_save=1000):
+        ''' Takes the file and splits it into individual text files for each subreddit. 
+
+        Args:
+            dest (str): dest folder to hold text files 
+                (note a "subreddit" folder will be created here).
+            p_min (int): the minimum number of posts required to start saving posts
+            batch_save (int): how often to write files (after p_min satisfied)
+        '''
+
         # make dir to hold txt files
         if not os.path.exists(os.path.join(dest, 'subreddits','')):
             os.mkdir(os.path.join(dest, 'subreddits'))
@@ -100,6 +135,7 @@ class bz2reader():
 
     
     def __del__(self):
+        ''' Special object destruction method to make sure file is closed'''
         if self.file_object:
             self.file_object.close()
 

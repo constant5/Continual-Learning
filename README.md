@@ -13,6 +13,9 @@ Repository for CSCE 5124 P4
 
 You will need to create a data dir in you root directory and put the compressed reddit file there
 
+[Endode_Post.ipynb](Endode_Post.ipynb)
+
+
 
 ## Resources
 

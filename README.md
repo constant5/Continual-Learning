@@ -25,6 +25,9 @@ You will need to create a data dir in you root directory and put the compressed 
 
 [Intro to Continual Learning Notebook](https://colab.research.google.com/github/ContinualAI/colab/blob/master/notebooks/intro_to_continual_learning.ipynb)
 
+[Episodic Memory in Lifelong Language Learning](https://arxiv.org/pdf/1906.01076v3.pdf) - [GitHub](https://github.com/h3lio5/episodic-lifelong-learning)
+
+
 ## Datasets
 
 [Core50 Dataset](https://vlomonaco.github.io/core50/)

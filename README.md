@@ -40,4 +40,6 @@ You will need to create a data dir in you root directory and put the compressed 
 
 [EWC](https://arxiv.org/pdf/1612.00796.pdf)
 
-[CURl](https://proceedings.neurips.cc/paper/2019/file/861578d797aeb0634f77aff3f488cca2-Paper.pdf)
+[CURL](https://proceedings.neurips.cc/paper/2019/file/861578d797aeb0634f77aff3f488cca2-Paper.pdf)
+
+[MBPA++](https://arxiv.org/pdf/1906.01076v3.pdf)
